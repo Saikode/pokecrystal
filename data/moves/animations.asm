@@ -3118,30 +3118,51 @@ BattleAnim_Sketch:
 
 BattleAnim_TripleKick:
 	anim_1gfx ANIM_GFX_HIT
-	anim_if_param_equal $1, .alternate1
-	anim_if_param_equal $2, .alternate2
+	anim_call BattleAnim_TargetObj_1Row
+	anim_bgeffect ANIM_BG_FLAIL, $0, BG_EFFECT_USER, $0
+	anim_wait 4
+	anim_sound 0, 1, SFX_DOUBLE_KICK
+	anim_obj ANIM_OBJ_KICK, 112, 50, $0
+	anim_obj ANIM_OBJ_HIT_BIG_YFIX, 112, 50, $0
+	anim_wait 6
+	anim_sound 0, 1, SFX_MOVE_PUZZLE_PIECE
+	anim_obj ANIM_OBJ_KICK, 136, 46, $0
+	anim_obj ANIM_OBJ_HIT_BIG_YFIX, 136, 46, $0
+	anim_wait 6
 	anim_sound 0, 1, SFX_MEGA_KICK
-	anim_obj ANIM_OBJ_KICK, 144, 48, $0
-	anim_wait 6
-	anim_obj ANIM_OBJ_HIT_YFIX, 144, 48, $0
-	anim_wait 8
+	anim_obj ANIM_OBJ_KICK, 152, 42, $0
+	anim_obj ANIM_OBJ_HIT_BIG_YFIX, 152, 42, $0
+	anim_wait 1
+	anim_incbgeffect ANIM_BG_FLAIL
+	anim_call BattleAnim_ShowMon_0
+	anim_wait 1
 	anim_ret
+; Old animation:
+	; anim_1gfx ANIM_GFX_HIT
+	; anim_if_param_equal $1, .alternate1
+	; anim_if_param_equal $2, .alternate2
+	; anim_sound 0, 1, SFX_MEGA_KICK
+	; anim_obj ANIM_OBJ_KICK, 144, 48, $0
+	; anim_wait 6
+	; anim_obj ANIM_OBJ_HIT_YFIX, 144, 48, $0
+	; anim_wait 8
+	; anim_ret
 
-.alternate1:
-	anim_sound 0, 1, SFX_DOUBLE_KICK
-	anim_obj ANIM_OBJ_KICK, 120, 64, $0
-	anim_wait 6
-	anim_obj ANIM_OBJ_HIT_YFIX, 120, 64, $0
-	anim_wait 8
-	anim_ret
+; .alternate1:
+	; anim_sound 0, 1, SFX_DOUBLE_KICK
+	; anim_obj ANIM_OBJ_KICK, 120, 64, $0
+	; anim_wait 6
+	; anim_obj ANIM_OBJ_HIT_YFIX, 120, 64, $0
+	; anim_wait 8
+	; anim_ret
 
-.alternate2:
-	anim_sound 0, 1, SFX_DOUBLE_KICK
-	anim_obj ANIM_OBJ_KICK, 132, 32, $0
-	anim_wait 6
-	anim_obj ANIM_OBJ_HIT_YFIX, 132, 32, $0
-	anim_wait 8
-	anim_ret
+; .alternate2:
+	; anim_sound 0, 1, SFX_DOUBLE_KICK
+	; anim_obj ANIM_OBJ_KICK, 132, 32, $0
+	; anim_wait 6
+	; anim_obj ANIM_OBJ_HIT_YFIX, 132, 32, $0
+	; anim_wait 8
+	; anim_ret
 
 BattleAnim_Thief:
 	anim_1gfx ANIM_GFX_HIT
@@ -4565,18 +4586,31 @@ BattleAnim_RockSmash:
 	anim_ret
 
 BattleAnim_Whirlpool:
-	anim_1gfx ANIM_GFX_WIND
+	anim_1gfx ANIM_GFX_WIND 
 	anim_bgeffect ANIM_BG_WHIRLPOOL, $0, $0, $0
-	anim_sound 0, 1, SFX_SURF
-	anim_wait 16
+	anim_wait 8
 .loop
 	anim_obj ANIM_OBJ_GUST, 132, 72, $0
 	anim_wait 6
+	anim_sound 0, 1, SFX_TOXIC
 	anim_loop 9, .loop
-	anim_wait 64
+	anim_wait 8
 	anim_incbgeffect ANIM_BG_WHIRLPOOL
 	anim_wait 1
 	anim_ret
+	; Old animation:
+	; anim_1gfx ANIM_GFX_WIND 
+	; anim_bgeffect ANIM_BG_WHIRLPOOL, $0, $0, $0
+	; anim_sound 0, 1, SFX_SURF
+	; anim_wait 16
+; .loop
+	; anim_obj ANIM_OBJ_GUST, 132, 72, $0
+	; anim_wait 6
+	; anim_loop 9, .loop
+	; anim_wait 64
+	; anim_incbgeffect ANIM_BG_WHIRLPOOL
+	; anim_wait 1
+	; anim_ret
 
 BattleAnim_BeatUp:
 	anim_if_param_equal $0, .current_mon

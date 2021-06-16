@@ -166,7 +166,7 @@ MoveNames::
 	li "SUBSTITUTE"
 	li "STRUGGLE"
 	li "SKETCH"
-	li "SPINNINGKICK" ; the move formerly known as Triple Kick
+	li "TRIPLE KICK"
 	li "THIEF"
 	li "SPIDER WEB"
 	li "MIND READER"

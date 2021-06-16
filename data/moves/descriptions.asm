@@ -1264,8 +1264,8 @@ RockSmashDescription:
 	next "lower DEFENSE.@"
 
 WhirlpoolDescription:
-	db   "Vortex batters foe"
-	next "for 2-5 hits.@"
+	db   "A vortex batters"
+	next "the foe 2-5 times.@"
 
 BeatUpDescription:
 	db   "Party #MON join"
