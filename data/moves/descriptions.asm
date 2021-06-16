@@ -544,8 +544,8 @@ SeismicTossDescription:
 	next "equals damage HP.@"
 
 StrengthDescription:
-	db   "A powerful physi-"
-	next "cal attack.@"
+	db   "Massive power may"
+	next "raise ATTACK.@"
 
 AbsorbDescription:
 	db   "Steals 1/2 of the"
@@ -560,7 +560,7 @@ LeechSeedDescription:
 	next "foe on every turn.@"
 
 GrowthDescription:
-	db   "Raises the SPCL."
+	db   "Raises the SPECIAL"
 	next "ATK rating.@"
 
 RazorLeafDescription:
@@ -641,7 +641,7 @@ ConfusionDescription:
 
 PsychicMDescription:
 	db   "An attack that may"
-	next "lower SPCL.DEF.@"
+	next "lower SP.DEF.@"
 
 HypnosisDescription:
 	db   "May put the foe to"
@@ -672,8 +672,8 @@ NightShadeDescription:
 	next "equals damage HP.@"
 
 MimicDescription:
-	db   "Copies a move used"
-	next "by the foe.@"
+	db   "Copies one of the"
+	next "foe's known moves.@"
 
 ScreechDescription:
 	db   "Sharply reduces"
@@ -716,7 +716,7 @@ BarrierDescription:
 	next "user's DEFENSE.@"
 
 LightScreenDescription:
-	db   "Ups SPCL.DEF with"
+	db   "Ups SP.DEF with"
 	next "a wall of light.@"
 
 HazeDescription:
@@ -772,8 +772,8 @@ FireBlastDescription:
 	next "may cause a burn.@"
 
 WaterfallDescription:
-	db   "An aquatic charge"
-	next "attack.@"
+	db   "Aquatic tackle may"
+	next "cause flinching.@"
 
 ClampDescription:
 	db   "Traps the foe for"
@@ -792,12 +792,12 @@ SpikeCannonDescription:
 	next "hit 2-5 times.@"
 
 ConstrictDescription:
-	db   "An attack that may"
-	next "lower SPEED.@"
+	db   "Holds on to enemy"
+	next "to lower SPEED.@"
 
 AmnesiaDescription:
 	db   "Sharply raises the"
-	next "user's SPCL.DEF.@"
+	next "user's SP.DEF.@"
 
 KinesisDescription:
 	db   "Reduces the foe's"
@@ -836,8 +836,8 @@ LovelyKissDescription:
 	next "to fall asleep.@"
 
 SkyAttackDescription:
-	db   "1st turn: Prepare"
-	next "2nd turn: Attack@"
+	db   "Charged attack may"
+	next "cause flinching.@"
 
 TransformDescription:
 	db   "The user assumes"
@@ -932,8 +932,8 @@ SketchDescription:
 	next "move permanently.@"
 
 TripleKickDescription:
-	db   "Hits three times"
-	next "with rising power.@"
+	db   "Spins like a top"
+	next "to hit 2-5 times.@"
 
 ThiefDescription:
 	db   "An attack that may"
@@ -1024,8 +1024,8 @@ MudSlapDescription:
 	next "accuracy.@"
 
 OctazookaDescription:
-	db   "An attack that may"
-	next "reduce accuracy.@"
+	db   "Ink shot reduces"
+	next "foe's accuracy.@"
 
 SpikesDescription:
 	db   "Hurts foes when"
@@ -1068,8 +1068,8 @@ OutrageDescription:
 	next "and confuses user.@"
 
 SandstormDescription:
-	db   "Inflicts damage"
-	next "every turn.@"
+	db   "Damages some, but"
+	next "raise ROCK SP.DEF.@"
 
 GigaDrainDescription:
 	db   "Steals 1/2 of the"
@@ -1180,12 +1180,12 @@ PursuitDescription:
 	next "switching #MON.@"
 
 RapidSpinDescription:
-	db   "A high-speed"
-	next "spinning attack.@"
+	db   "Spinning attack"
+	next "raises SPEED.@"
 
 SweetScentDescription:
-	db   "Reduces the foe's"
-	next "evasiveness.@"
+	db   "Sweet pollen may"
+	next "cause confusion.@"
 
 IronTailDescription:
 	db   "An attack that may"
@@ -1233,10 +1233,10 @@ SunnyDayDescription:
 
 CrunchDescription:
 	db   "An attack that may"
-	next "lower SPCL.DEF.@"
+	next "lower DEFENSE.@"
 
 MirrorCoatDescription:
-	db   "Counters a SPCL."
+	db   "Counters a SPECIAL"
 	next "ATK move double.@"
 
 PsychUpDescription:
@@ -1253,7 +1253,7 @@ AncientpowerDescription:
 
 ShadowBallDescription:
 	db   "An attack that may"
-	next "lower SPCL.DEF.@"
+	next "lower SP.DEF.@"
 
 FutureSightDescription:
 	db   "An attack that"
@@ -1264,8 +1264,8 @@ RockSmashDescription:
 	next "lower DEFENSE.@"
 
 WhirlpoolDescription:
-	db   "Traps the foe for"
-	next "2-5 turns.@"
+	db   "Vortex batters foe"
+	next "for 2-5 hits.@"
 
 BeatUpDescription:
 	db   "Party #MON join"
