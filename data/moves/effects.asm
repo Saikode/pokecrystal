@@ -858,9 +858,9 @@ MultiHit:
 	supereffectivelooptext
 	checkfaint
 	buildopponentrage
+	kingsrock
 	endloop
 	raisesub
-	kingsrock
 	endmove
 
 PoisonMultiHit:
@@ -2057,10 +2057,10 @@ BeatUp:
 	supereffectivetext
 	checkfaint
 	buildopponentrage
+	kingsrock
 	endloop
 	beatupfailtext
 	raisesub
-	kingsrock
 	endmove
 
 DefenseCurl:
