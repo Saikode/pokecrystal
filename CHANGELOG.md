@@ -2,8 +2,8 @@
 ====
 General Changes:
 ----
+* **Ghost and Dark have had their attacking stats swapped: Ghost-type moves use Special Attack, and Dark-type moves use physical Attack.**
 * Multi-hit moves have a chance to proc effects (e.g. King's Rock flinch, Twineedle poison) every hit.
-* Ghost and Dark have had their attacking stats swapped: Ghost-type moves use Special Attack, and Dark-type moves use physical Attack.
 * As in Sun/Moon, some Pokemon will now learn a move upon evolution as opposed to at a specific level.
 
 Move updates from canon games:

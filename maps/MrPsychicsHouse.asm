@@ -9,13 +9,12 @@ MrPsychicsHouse_MapScripts:
 MrPsychic:
 	faceplayer
 	opentext
-	checkevent EVENT_GOT_TM29_PSYCHIC
+	checkitem EVENT_GOT_TM29_PSYCHIC
 	iftrue .AlreadyGotItem
 	writetext MrPsychicText1
 	promptbutton
 	verbosegiveitem TM_PSYCHIC_M
 	iffalse .Done
-	setevent EVENT_GOT_TM29_PSYCHIC
 .AlreadyGotItem:
 	writetext MrPsychicText2
 	waitbutton

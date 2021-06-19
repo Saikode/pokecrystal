@@ -53,6 +53,10 @@ CeladonDeptStore3FYoungsterText:
 
 	para "should use this TM"
 	line "on…"
+	
+	para "Oh, what am I say-"
+	line "ing? I can teach"
+	cont "it to all of 'em!"
 	done
 
 CeladonDeptStore3FGameboyKid1Text:
