@@ -2131,6 +2131,8 @@ wItemsPocketCursor::    db
 wKeyItemsPocketCursor:: db
 wBallsPocketCursor::    db
 wTMHMPocketCursor::     db
+wBerryPocketCursor::	db
+wMedicinePocketCursor::	db
 
 wPCItemsScrollPosition::        db
 	ds 1
@@ -2138,6 +2140,8 @@ wItemsPocketScrollPosition::    db
 wKeyItemsPocketScrollPosition:: db
 wBallsPocketScrollPosition::    db
 wTMHMPocketScrollPosition::     db
+wBerryPocketScrollPosition::	db
+wMedicinePocketScrollPosition::	db
 
 wSwitchMon::
 wSwitchItem::
@@ -2641,7 +2645,8 @@ NEXTU
 ; catch tutorial dude pack
 wDudeNumItems:: db
 wDudeItems:: ds 2 * 4 + 1
-
+wDudeNumBerries::
+wDudeNumMedicine::
 wDudeNumKeyItems:: db
 wDudeKeyItems:: ds 18 + 1
 
@@ -2794,7 +2799,6 @@ endr
 
 wCmdQueue:: ds CMDQUEUE_CAPACITY * CMDQUEUE_ENTRY_SIZE
 
-	ds 40
 
 wMapObjects::
 wPlayerObject:: map_object wPlayer ; player is map object 0
@@ -2867,6 +2871,12 @@ wKeyItems:: ds MAX_KEY_ITEMS + 1
 wNumBalls:: db
 wBalls:: ds MAX_BALLS * 2 + 1
 
+wNumBerries:: db
+wBerries:: ds MAX_BERRIES * 2 + 1
+
+wNumMedicine:: db
+wMedicine:: ds MAX_MEDICINE * 2 + 1
+
 wNumPCItems:: db
 wPCItems:: ds MAX_PC_ITEMS * 2 + 1
 
@@ -2893,7 +2903,7 @@ wMooMooBerries:: db
 wUndergroundSwitchPositions:: db
 wFarfetchdPosition:: db
 
-	ds 13
+;	ds 13
 
 ; map scene ids
 wPokecenter2FSceneID::                            db
@@ -2976,7 +2986,7 @@ wMountMoonSquareSceneID::                         db
 wMobileTradeRoomSceneID::                         db
 wMobileBattleRoomSceneID::                        db
 
-	ds 49
+;	ds 49
 
 ; fight counts
 wJackFightCount::    db
@@ -3008,7 +3018,7 @@ wKenjiFightCount::   db ; unreferenced
 wParryFightCount::   db
 wErinFightCount::    db
 
-	ds 100
+;	ds 100
 
 wEventFlags:: flag_array NUM_EVENTS
 
@@ -3114,7 +3124,7 @@ wSafariTimeRemaining:: dw
 
 wPhoneList:: ds CONTACT_LIST_SIZE + 1
 
-	ds 22
+;	ds 22
 
 wLuckyNumberShowFlag:: db
 	ds 1
