@@ -1,7 +1,10 @@
+POKECENTER_RESTAREA_PRICE EQU 500
+
 	object_const_def
 	const POKECENTER2F_TRADE_RECEPTIONIST
 	const POKECENTER2F_BATTLE_RECEPTIONIST
 	const POKECENTER2F_TIME_CAPSULE_RECEPTIONIST
+	const POKECENTER2F_REST_AREA_RECEPTIONIST
 	const POKECENTER2F_OFFICER
 
 Pokecenter2F_MapScripts:
@@ -12,6 +15,7 @@ Pokecenter2F_MapScripts:
 	scene_script .Scene3 ; SCENE_POKECENTER2F_LEAVE_TIME_CAPSULE
 	scene_script .Scene4 ; SCENE_POKECENTER2F_LEAVE_MOBILE_TRADE_ROOM
 	scene_script .Scene5 ; SCENE_POKECENTER2F_LEAVE_MOBILE_BATTLE_ROOM
+	scene_script .Scene6 ; SCENE_POKECENTER2F_LEAVE_REST_AREA
 
 	def_callbacks
 
@@ -44,6 +48,10 @@ Pokecenter2F_MapScripts:
 
 .Scene5:
 	sdefer Script_LeftMobileBattleRoom
+	end
+
+.Scene6:
+	sdefer Script_LeftRestArea
 	end
 
 Pokecenter2F_AppearMysteryGiftDeliveryGuy:
@@ -411,6 +419,24 @@ Script_WalkOutOfMobileBattleRoom:
 	applymovement POKECENTER2F_BATTLE_RECEPTIONIST, Pokecenter2FMobileMovementData_ReceptionistWalksRightAndDown
 	end
 
+Script_LeftRestArea:
+	scall Script_WalkOutOfRestArea
+	setscene SCENE_DEFAULT
+	setmapscene POKECENTER_2F_REST_AREA, SCENE_DEFAULT
+	end
+	
+Script_WalkOutOfRestArea:
+	applymovement POKECENTER2F_REST_AREA_RECEPTIONIST, Pokecenter2FMobileMovementData_ReceptionistWalksUpAndLeft
+	applymovement PLAYER, Pokecenter2FMovementData_PlayerTakesThreeStepsDown
+	applymovement POKECENTER2F_REST_AREA_RECEPTIONIST, Pokecenter2FMovementData_ReceptionistStepsRightAndDown
+	setscene SCENE_DEFAULT
+	turnobject PLAYER, UP
+	opentext
+	writetext Text_RestAreaReceptionistFeelRefreshed
+	waitbutton
+	closetext
+	end
+
 Pokecenter2F_CheckGender:
 	checkflag ENGINE_PLAYER_IS_FEMALE
 	iftrue .Female
@@ -620,6 +646,40 @@ Pokecenter2FOfficerScript:
 	closetext
 	end
 
+ReceptionistScript_RestArea:
+	faceplayer
+	opentext
+	writetext Text_RestAreaReceptionistIntro
+	special PlaceMoneyTopRight
+	yesorno
+	iffalse .Declined
+	checkmoney YOUR_MONEY, POKECENTER_RESTAREA_PRICE
+	ifequal HAVE_LESS, .NotEnoughMoney
+	waitsfx
+	playsound SFX_TRANSACTION
+	takemoney YOUR_MONEY, POKECENTER_RESTAREA_PRICE
+	special PlaceMoneyTopRight
+	writetext Text_RestAreaReceptionistRightThisWay
+	waitbutton
+	closetext
+	applymovementlasttalked Pokecenter2FMovementData_ReceptionistWalksUpAndLeft_LookRight
+	applymovement PLAYER, Pokecenter2FMovementData_PlayerTakesThreeStepsUp
+	warpcheck
+	end
+
+	
+.NotEnoughMoney
+	writetext Text_RestAreaReceptionistNotEnoughMoney
+	waitbutton
+	closetext
+	end
+	
+.Declined
+	writetext Text_RestAreaReceptionistDeclined
+	waitbutton
+	closetext
+	end
+	
 Pokecenter2FMovementData_ReceptionistWalksUpAndLeft_LookRight:
 	slow_step UP
 	slow_step LEFT
@@ -1020,6 +1080,47 @@ Text_BrokeStadiumRules:
 	line "when you're ready."
 	done
 
+Text_RestAreaReceptionistIntro:
+	text "Welcome! This is"
+	line "the REST AREA."
+	
+	para "Would you like to"
+	line "rest here awhile?"
+	cont "A room costs ¥500."
+	done
+
+Text_RestAreaReceptionistRightThisWay:
+	text "Very well! Right"
+	line "this way, please."
+	done
+
+Text_RestAreaReceptionistDeclined:
+	text "Is that so? Then,"
+	line "please come again"
+	cont "soon."
+	done
+
+Text_RestAreaReceptionistNotEnoughMoney:
+	text "Oh… I'm sorry, but"
+	line "you don't have"
+	cont "enough money."
+	
+	para "Please come again"
+	line "soon!"
+	done
+
+Text_RestAreaReceptionistFeelRefreshed:
+	text "Thank you for"
+	line "staying with us."	
+	
+	para "Are you and your"
+	line "#MON feeling"
+	cont "refreshed?"
+	
+	para "We hope to see"
+	line "you again!"
+	done
+
 Pokecenter2F_MapEvents:
 	db 0, 0 ; filler
 
@@ -1028,11 +1129,10 @@ Pokecenter2F_MapEvents:
 	warp_event  5,  0, TRADE_CENTER, 1
 	warp_event  9,  0, COLOSSEUM, 1
 	warp_event 13,  2, TIME_CAPSULE, 1
-	warp_event  6,  0, MOBILE_TRADE_ROOM, 1
-	warp_event 10,  0, MOBILE_BATTLE_ROOM, 1
+	warp_event  2,  0, POKECENTER_2F_REST_AREA, 1
 
 	def_coord_events
-
+ 
 	def_bg_events
 	bg_event  7,  3, BGEVENT_READ, Pokecenter2FLinkRecordSign
 
@@ -1040,4 +1140,5 @@ Pokecenter2F_MapEvents:
 	object_event  5,  2, SPRITE_LINK_RECEPTIONIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, LinkReceptionistScript_Trade, -1
 	object_event  9,  2, SPRITE_LINK_RECEPTIONIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, LinkReceptionistScript_Battle, -1
 	object_event 13,  3, SPRITE_LINK_RECEPTIONIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, LinkReceptionistScript_TimeCapsule, -1
-	object_event  1,  1, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Pokecenter2FOfficerScript, EVENT_MYSTERY_GIFT_DELIVERY_GUY
+	object_event  2,  2, SPRITE_LINK_RECEPTIONIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ReceptionistScript_RestArea, -1
+	object_event  3,  4, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Pokecenter2FOfficerScript, EVENT_MYSTERY_GIFT_DELIVERY_GUY

@@ -39,13 +39,13 @@
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 26
 	tilecoll WALL, WALL, FLOOR, FLOOR ; 27
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 28
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 29
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 2a
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 2b
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 2c
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 2d
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 2e
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 2f
+	tilecoll WALL, WALL, RADIO, FLOOR ; 29
+	tilecoll WALL, FLOOR, WALL, WARP_CARPET_DOWN ; 2a
+	tilecoll FLOOR, WALL, WARP_CARPET_DOWN, WALL ; 2b
+	tilecoll FLOOR, FLOOR, FLOOR, WALL ; 2c
+	tilecoll FLOOR, WALL, FLOOR, FLOOR ; 2d
+	tilecoll FLOOR, FLOOR, WALL, FLOOR ; 2e
+	tilecoll WALL, FLOOR, FLOOR, FLOOR ; 2f
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 30
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 31
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 32

@@ -66,7 +66,10 @@ CeladonPokecenter2FBeta_Blocks:
 ViridianPokecenter2FBeta_Blocks:
 SaffronPokecenter2FBeta_Blocks:
 	INCBIN "maps/Pokecenter2F.blk"
-
+	
+Pokecenter2FRestArea_Blocks:
+	INCBIN "maps/Pokecenter2FRestArea.blk"
+	
 Route41_Blocks:
 	INCBIN "maps/Route41.blk"
 

@@ -2985,6 +2985,7 @@ wFastShipB1FSceneID::                             db
 wMountMoonSquareSceneID::                         db
 wMobileTradeRoomSceneID::                         db
 wMobileBattleRoomSceneID::                        db
+wPokecenter2FRestAreaSceneID::					  db
 
 ;	ds 49
 

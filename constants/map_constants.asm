@@ -387,6 +387,7 @@ ENDM
 	map_const TIME_CAPSULE,                                 5,  4 ;  4
 	map_const MOBILE_TRADE_ROOM,                            5,  4 ;  5
 	map_const MOBILE_BATTLE_ROOM,                           5,  4 ;  6
+	map_const POKECENTER_2F_REST_AREA,						2,	4 ;	 7
 	endgroup
 
 	newgroup CELADON                                              ; 21

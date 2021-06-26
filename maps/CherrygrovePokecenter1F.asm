@@ -21,18 +21,18 @@ CherrygrovePokecenter1FGentlemanScript:
 CherrygrovePokecenter1FTeacherScript:
 	faceplayer
 	opentext
-	checkevent EVENT_GAVE_MYSTERY_EGG_TO_ELM
-	iftrue .CommCenterOpen
+	; checkevent EVENT_GAVE_MYSTERY_EGG_TO_ELM
+	; iftrue .CommCenterOpen
 	writetext CherrygrovePokecenter1FTeacherText
 	waitbutton
 	closetext
 	end
 
-.CommCenterOpen:
-	writetext CherrygrovePokecenter1FTeacherText_CommCenterOpen
-	waitbutton
-	closetext
-	end
+; .CommCenterOpen:
+	; writetext CherrygrovePokecenter1FTeacherText_CommCenterOpen
+	; waitbutton
+	; closetext
+	; end
 
 CherrygrovePokecenter1FFisherText:
 	text "It's great. I can"
@@ -49,22 +49,25 @@ CherrygrovePokecenter1FGentlemanText:
 	done
 
 CherrygrovePokecenter1FTeacherText:
-	text "The COMMUNICATION"
-	line "CENTER upstairs"
-	cont "was just built."
+	text "I'm traveling from"
+	line "far away, so I"
+	cont "booked a room at"
 
-	para "But they're still"
-	line "finishing it up."
+	para "the REST AREA"
+	line "upstairs. Nothing"
+	
+	para "beats a good"
+	line "night's sleep!"
 	done
 
-CherrygrovePokecenter1FTeacherText_CommCenterOpen:
-	text "The COMMUNICATION"
-	line "CENTER upstairs"
-	cont "was just built."
+; CherrygrovePokecenter1FTeacherText_CommCenterOpen:
+	; text "The COMMUNICATION"
+	; line "CENTER upstairs"
+	; cont "was just built."
 
-	para "I traded #MON"
-	line "there already!"
-	done
+	; para "I traded #MON"
+	; line "there already!"
+	; done
 
 CherrygrovePokecenter1F_MapEvents:
 	db 0, 0 ; filler
