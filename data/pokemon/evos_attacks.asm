@@ -2062,8 +2062,9 @@ MewEvosAttacks:
 ChikoritaEvosAttacks:
 	db EVOLVE_LEVEL, 16, BAYLEEF
 	db 0 ; no more evolutions
-	db 1, TRIPLE_KICK
 	db 1, TACKLE
+	db 1, SANDSTORM
+	db 1, RAZOR_WIND
 	db 1, GROWL
 	db 8, RAZOR_LEAF
 	db 12, REFLECT

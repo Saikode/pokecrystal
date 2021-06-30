@@ -1170,6 +1170,7 @@ RazorWind:
 	checkcharge
 	checkobedience
 	doturn
+	skipsandcharge
 	charge
 	usedmovetext
 	critical

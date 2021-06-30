@@ -6,6 +6,8 @@ General Changes:
 * Multi-hit moves have a chance to proc effects (e.g. King's Rock flinch, Twineedle poison) every hit.
 * As in Sun/Moon, some Pokemon will now learn a move upon evolution as opposed to at a specific level.
 * TMs are now reusable and will not be consumed when used.
+* The game's clock can optionally be desynced from real-time in order to skip directly to the next Morning, Day or Night cycle. All methods of advancing time separate from the RTC are optional, so those who so desire it can simply ignore the features to keep the clock synced.
+* Text now scrolls faster, with an option to print text instantly.
 
 Move updates from canon games:
 ----
@@ -90,6 +92,10 @@ Move functionality changes:
 ----
 Strength  
 \- 20% chance to raise user's Attack  
+Razor Wind
+\- 120 power
+\- 100 accuracy
+\- Skips charge turn during Sandstorm
 Mimic  
 \- RBY functionality restored: Pick freely from opponent's moves  
 Constrict  
@@ -100,7 +106,6 @@ Octazooka
 \- 100% accuracy  
 \- 100% chance to lower target's Accuracy  
 Triple Kick  
-\- Name changed to "SpinningKick"  
 \- 2-to-5-strike multi-hit move
 \- 25 power  
 Whirlpool  

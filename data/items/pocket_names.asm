@@ -14,4 +14,4 @@ ItemPocketNames:
 .Ball:    db "BALL POCKET@"
 .TM:      db "TM POCKET@"
 .Berry    db "BERRY POCKET@"
-.Medicine db "MEDICN.POCKET@"
+.Medicine db "MEDICINE PCKT@"
