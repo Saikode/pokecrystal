@@ -318,3 +318,24 @@ ENDM
 sound_ret: MACRO
 	db sound_ret_cmd
 ENDM
+
+; FroggestSpirit's Crystal Complete macros
+inc_octave: MACRO
+	db $f4
+	ENDM
+
+dec_octave: MACRO
+	db $f5
+	ENDM
+
+notetype0: MACRO
+	db $f6, \1
+	ENDM
+
+notetype1: MACRO
+	db $f7, \1
+	ENDM
+
+notetype2: MACRO
+	db $f8, \1
+	ENDM

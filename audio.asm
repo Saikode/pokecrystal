@@ -140,6 +140,12 @@ SECTION "Extra Songs 2", ROMX
 
 INCLUDE "audio/music/postcredits.asm"
 
+SECTION "New Songs", ROMX
+
+INCLUDE "audio/music/froggestspirit/club1.asm"
+INCLUDE "audio/music/froggestspirit/club2.asm"
+INCLUDE "audio/music/froggestspirit/club3.asm"
+INCLUDE "audio/music/froggestspirit/imakuni.asm"
 
 SECTION "Sound Effects", ROMX
 

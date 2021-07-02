@@ -107,4 +107,8 @@ Music:
 	dba Music_SuicuneBattle
 	dba Music_BattleTowerLobby
 	dba Music_MobileCenter
+	dba Music_TCGClub1
+	dba Music_TCGClub2
+	dba Music_TCGClub3
+	dba Music_TCGImakuni
 	assert_table_length NUM_MUSIC_SONGS

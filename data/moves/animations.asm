@@ -1343,7 +1343,6 @@ BattleAnim_Sonicboom_JP: ; unreferenced
 	anim_ret
 
 BattleAnim_Gust:
-BattleAnim_Sonicboom:
 	anim_2gfx ANIM_GFX_WIND, ANIM_GFX_HIT
 .loop
 	anim_sound 0, 1, SFX_RAZOR_WIND
@@ -1353,6 +1352,30 @@ BattleAnim_Sonicboom:
 	anim_obj ANIM_OBJ_HIT_YFIX, 144, 64, $18
 	anim_wait 8
 	anim_obj ANIM_OBJ_HIT_YFIX, 128, 32, $18
+	anim_wait 16
+	anim_ret
+	
+BattleAnim_Sonicboom:
+	anim_2gfx ANIM_GFX_WHIP, ANIM_GFX_HIT
+.loop
+	anim_sound 3, 0, SFX_RAZOR_WIND
+	anim_obj ANIM_OBJ_SONICBOOM_JP, 64, 80, $3
+	anim_wait 8
+	anim_sound 3, 0, SFX_RAZOR_WIND
+	anim_obj ANIM_OBJ_SONICBOOM_JP, 64, 88, $2
+	anim_wait 8
+	anim_sound 3, 0, SFX_RAZOR_WIND
+	anim_obj ANIM_OBJ_SONICBOOM_JP, 64, 96, $4
+	anim_wait 8
+	anim_loop 2, .loop
+	anim_wait 32
+	anim_incobj 1
+	anim_incobj 2
+	anim_incobj 3
+	anim_incobj 4
+	anim_incobj 5
+	anim_incobj 6
+	anim_obj ANIM_OBJ_HIT_YFIX, 136, 56, $0
 	anim_wait 16
 	anim_ret
 
@@ -2624,7 +2647,7 @@ BattleAnim_NightShade:
 	anim_1gfx ANIM_GFX_HIT
 	anim_bgp $1b
 	anim_obp1 $1b
-	anim_wait 32
+	anim_wait 8
 	anim_call BattleAnim_UserObj_2Row
 	anim_bgeffect ANIM_BG_NIGHT_SHADE, $0, BG_EFFECT_TARGET, $8
 	anim_sound 0, 1, SFX_PSYCHIC
